@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="疑难问题,json," />
+  <meta name="keywords" content="json,疑难问题," />
 
 
 
@@ -87,7 +87,7 @@
 
 
 <meta name="description" content="场景在爬虫中经常会遇到一下json格式的数据需要进行解析，但是如果这段json中value中含有双引号的话就会导致解析错误，报错遗漏数据的情况。">
-<meta name="keywords" content="疑难问题,json">
+<meta name="keywords" content="json,疑难问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="解决json的value中含有双引号导致解析错误的问题">
 <meta property="og:url" content="brucexiaowang.github.io&#x2F;%E8%A7%A3%E5%86%B3json%E7%9A%84value%E4%B8%AD%E5%90%AB%E6%9C%89%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%AF%BC%E8%87%B4%E8%A7%A3%E6%9E%90%E9%94%99%E8%AF%AF%E7%9A%84%E9%97%AE%E9%A2%98&#x2F;index.html">
@@ -361,6 +361,16 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/%E8%A7%A3%E5%86%B3json%E7%9A%84value%E4%B8%AD%E5%90%AB%E6%9C%89%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%AF%BC%E8%87%B4%E8%A7%A3%E6%9E%90%E9%94%99%E8%AF%AF%E7%9A%84%E9%97%AE%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/%E8%A7%A3%E5%86%B3json%E7%9A%84value%E4%B8%AD%E5%90%AB%E6%9C%89%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%AF%BC%E8%87%B4%E8%A7%A3%E6%9E%90%E9%94%99%E8%AF%AF%E7%9A%84%E9%97%AE%E9%A2%98/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -482,9 +492,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/" rel="tag"># 疑难问题</a>
-          
             <a href="/tags/json/" rel="tag"># json</a>
+          
+            <a href="/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/" rel="tag"># 疑难问题</a>
           
         </div>
       
@@ -538,6 +548,9 @@
 
           
 
+  
+    <div class="comments" id="comments">
+    </div>
   
 
 
@@ -842,6 +855,28 @@
 
 
 
+
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+  
+  <script type="text/javascript">
+    var GUEST = ['nick','mail','link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item=>{
+      return GUEST.indexOf(item)>-1;
+    });
+    new Valine({
+        el: '#comments' ,
+        verify: false,
+        notify: false,
+        appId: 'mzQSvzxi27qGG35R9ig3njMg-gzGzoHsz',
+        appKey: 'gFoUAyHQixMVLVzCjjOIhHUV',
+        placeholder: 'Just go go',
+        avatar:'mm',
+        guest_info:guest,
+        pageSize:'10' || 10,
+    });
+  </script>
 
 
 
