@@ -1,6 +1,151 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo博客优化之双线部署到Coding Pages和Github Pages</title>
+    <url>/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%88%B0Coding-Pages%E5%92%8CGithub-Pages/</url>
+    <content><![CDATA[<p><img src="https://w.wallhaven.cc/full/lq/wallhaven-lqqdyp.jpg" alt="Anime 1306x900 anime anime girls short hair gun rain water weapon cyberpunk GUWEIZ girls with guns"></p>
+<p>双线部署到Coding Pages和Github Pages可以解决Github国内访问慢和Coding易宕机的问题。</p>
+<a id="more"></a>
+
+<p>转载自：<strong>TRHX的博客文章：<a href="https://www.itrhx.com/2018/08/15/A02-hexo-blog/" target="_blank" rel="noopener">TRHX’S BLOG</a>。</strong></p>
+<h1 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h1><p>进入 <a href="https://coding.net/" target="_blank" rel="noopener">Coding 官网</a>，点击个人版登陆，没有账号就注册一个并登录，由于 Coding 已经被腾讯收购了，所以登录就会来到腾讯云开发者平台，点击创建项目<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/01.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/01.jpg" alt="01"></a></p>
+<p>项目名称建议和你的用户名一致，这样做的好处是：到时候可以直接通过 <code>user_name.coding.me</code> 访问你的博客，如果项目名与用户名不一致，则需要通过 <code>user_name.coding.me/project_name</code> 才能访问，项目描述可以随便写<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/02.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/02.jpg" alt="02"></a></p>
+<h1 id="配置公钥"><a href="#配置公钥" class="headerlink" title="配置公钥"></a>配置公钥</h1><p>配置 SSH 公钥方法与 GitHub Pages 的方式差不多，点击你的头像，依次选择【个人设置】-【SSH公钥】-【新增公钥】<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/03.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/03.jpg" alt="03"></a></p>
+<p>前面部署到 GitHub Pages 的时候就已经有了一对公钥，我们直接将该公钥粘贴进去就行，公钥名称可以随便写，选中永久有效选项</p>
+<p>PS：公钥储存位置一般在 C:\Users\用户名.ssh 目录下的 id_rsa.pub 文件里，用记事本打开复制其内容即可<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/04.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/04.jpg" alt="04"></a></p>
+<p>添加公钥后，我们可以右键 <code>Get Bash</code>，输入以下命令来检查是否配置成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@git.coding.net</span></pre></td></tr></table></figure>
+
+<p>若出现以下提示，则证明配置成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Coding 提示: Hello XXX, You&#39;ve connected to Coding.net via SSH. This is a personal key.XXX，你好，你已经通过 SSH 协议认证 Coding.net 服务，这是一个个人公钥</span></pre></td></tr></table></figure>
+
+
+<h1 id="配置-config-yml"><a href="#配置-config-yml" class="headerlink" title="配置 _config.yml"></a>配置 _config.yml</h1><p>进入你的项目，在右下角有选择连接方式，选择 SSH 方式（HTTPS 方式也可以，但是这种方式有时候可能连接不上，SSH 连接不容易出问题），一键复制，然后打开你本地博客根目录的 <code>_config.yml</code> 文件，找到 <code>deploy</code> 关键字，添加 coding 地址：<code>coding: git@git.dev.tencent.com:user_name/user_name.git</code>，也就是刚刚复制的 SSH 地址<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/05.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/05.jpg" alt="05"></a><br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/06.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/06.jpg" alt="06"></a></p>
+<p>添加完成后先执行命令 <code>hexo clean</code> 清理一下缓存，然后执行命令 <code>hexo g -d</code> 将博客双线部署到 Coding Pages 和 GitHub Pages，如下图所示表示部署成功：<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/13.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/13.jpg" alt="13"></a></p>
+<h1 id="开启-Coding-Pages"><a href="#开启-Coding-Pages" class="headerlink" title="开启 Coding Pages"></a>开启 Coding Pages</h1><p>进入你的项目，在代码栏下选择 Pages 服务，一键开启 Coding Pages，等待几秒后刷新网页即可看到已经开启的 Coding Pages，到目前为止，你就可以通过 xxxx.coding.me（比如我的是 trhx.coding.me）访问你的 Coding Pages 页面了<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/07.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/07.jpg" alt="07"></a></p>
+<p><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/08.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/08.jpg" alt="08"></a></p>
+<h1 id="绑定域名并开启-HPPTS"><a href="#绑定域名并开启-HPPTS" class="headerlink" title="绑定域名并开启 HPPTS"></a>绑定域名并开启 HPPTS</h1><p>首先在你的域名 DNS 设置中添加一条 CNAME 记录指向 xxxx.coding.me，解析路线选择默认，将 GitHub 的解析路线改为境外，这样境外访问就会走 GitHub，境内就会走 Coding，也有人说阿里云是智能解析，自动分配路线，如果解析路线都是默认，境外访问同样会智能选择走 GitHub，境内走 Coding，我没有验证过，有兴趣的可以自己试试，我的解析如下图所示：<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/09.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/09.jpg" alt="09"></a></p>
+<p>然后点击静态 Pages 应用右上角的设置，进入设置页面，这里要注意，如果你之前已经部署到了 GitHub Pages 并开启了 HTTPS，那么直接在设置页面绑定你自己的域名，SSL/TLS 安全证书就会显示申请错误，如下图所示，没有申请到 SSL 证书，当你访问你的网站时，浏览器就会提示不是安全连接<a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/10.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/10.jpg" alt="10"></a></p>
+<p>申请错误原因是：在验证域名所有权时会定位到 Github Pages 的主机上导致 SSL 证书申请失败</p>
+<p>正确的做法是：先去域名 DNS 把 GitHub 的解析暂停掉，然后再重新申请 SSL 证书，大约十秒左右就能申请成功，然后开启强制 HTTPS 访问</p>
+<p>这里也建议同时绑定有 www 前缀后没有 www 前缀的，然后设置其中一个为【首选】，另一个设置【跳转至首选】，这样不管用户是否输入 www 前缀都可以访问了</p>
+<p>在博客资源引用的时候也要注意所有资源的 URL 必须是以 https:// 开头，不然浏览器依旧会提示不安全！<br><a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/11_1.png" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/11_1.png" alt="11_1"></a></p>
+<p>至此，我们的 Hexo 博客就成功双线部署到 Coding Pages 和 GitHub Pages 了，并且也实现了全站 HPPTS，最后来一张 GitHub Pages 和 Coding Pages 在国内的速度对比图，可以明显看到速度的提升<a href="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/12.jpg" target="_blank" rel="noopener"><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A47/12.jpg" alt="12"></a></p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>使用Github Pages和Hexo搭建自己的独立博客</title>
+    <url>/%E4%BD%BF%E7%94%A8Github-Pages%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</url>
+    <content><![CDATA[<p><img src="https://w.wallhaven.cc/full/zx/wallhaven-zxy9my.jpg" alt="General 1920x1080 Wang Ke concept art cyberpunk"></p>
+<p>这是一篇有关如何使用 Github Pages 和 Hexo 搭建属于自己独立博客的详尽教程</p>
+<a id="more"></a>
+
+<p>转载自：<strong>TRHX的博客文章：<a href="https://www.itrhx.com/2018/08/15/A02-hexo-blog/" target="_blank" rel="noopener">TRHX’S BLOG</a>。</strong></p>
+<h1 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h1><blockquote>
+<p><strong>Github Pages</strong></p>
+</blockquote>
+<p>Github Pages可以被认为是用户编写的、托管在github上的静态网页。使用Github Pages可以为你提供一个免费的服务器，免去了自己搭建服务器和写数据库的麻烦。此外还可以绑定自己的域名。</p>
+<blockquote>
+<p><strong>Hexo</strong></p>
+</blockquote>
+<p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
+<h1 id="安装-Node-js"><a href="#安装-Node-js" class="headerlink" title="安装 Node.js"></a>安装 Node.js</h1><p><a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">点击此处</a>访问官网，按需下载相应版本，默认安装可以了</p>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/02.png" alt="02"></p>
+<p>注：本人在安装过程中出现了Warning 1909,无法创建快捷方式，这种情况很少出现，如果在安装过程中也有这种情况请参考百度文库（win10系统实测可行）：<a href="https://wenku.baidu.com/view/4ad59110964bcf84b9d57ba5.html" target="_blank" rel="noopener">《Win7安装程序警告1909无法创建快捷方式》</a></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/03.png" alt="03"></p>
+<h1 id="安装-Git"><a href="#安装-Git" class="headerlink" title="安装 Git"></a>安装 Git</h1><p><a href="https://git-scm.com/download/win" target="_blank" rel="noopener">点击此处</a>访问官网，按需下载相应版本，默认安装即可<br>参考资料：<a href="https://www.cnblogs.com/jytx/p/5602927.html" target="_blank" rel="noopener">《如何在windows下安装GIT》</a> （By 俊雨廷休）<br>　　　　　<a href="http://git.oschina.net/progit/" target="_blank" rel="noopener">《Pro Git（中文版）》</a></p>
+<h1 id="检验软件是否安装成功"><a href="#检验软件是否安装成功" class="headerlink" title="检验软件是否安装成功"></a>检验软件是否安装成功</h1><p>同时按下 Win 键和 R 键打开运行窗口,输入 cmd ，然后输入以下命令，有相应版本信息显示则安装成功，若不正确可以卸载软件重新安装，此外若安装成功，在桌面右键鼠标，可以看到菜单里多了 Git GUI Here 和 Git Bash Here两个选项，第一个是图形界面的Git操作，另一个是命令行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git --version$ node -v$ npm -v</span></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/04.png" alt="04"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/05.png" alt="05"></p>
+<h1 id="Hexo-安装"><a href="#Hexo-安装" class="headerlink" title="Hexo 安装"></a>Hexo 安装</h1><p>选择一个磁盘，新建一个文件夹，自己重命名文件夹（如：我的文件夹为：Ｅ\TRHX_Blog），博客相关文件将储存在此文件夹下，在该文件夹下右键鼠标，点击 Git Bash Here，输入以下 npm 命令即可安装，第一个命令表示安装 hexo，第二个命令表示安装 hexo 部署到 git page 的 deployer，如图所示即为安装成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g$ npm install hexo-deployer-git --save</span></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/06.png" alt="06"></p>
+<h1 id="Hexo-初始化配置"><a href="#Hexo-初始化配置" class="headerlink" title="Hexo 初始化配置"></a>Hexo 初始化配置</h1><p>在刚才新建的文件夹里面再次新建一个 Hexo 文件夹（如：我的文件夹为：E\TRHX_Blog\Hexo）,进入该 Hexo 文件夹右键鼠标，点击 Git Bash Here，输入以下命令，如图所示则安装成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo init</span></pre></td></tr></table></figure>
+
+<p><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/07.png" alt="07"></p>
+<p>Hexo 安装完成后，将会在指定文件夹中新建所需要的文件，Hexo 文件夹下的目录如下：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/08.png" alt="08"></p>
+<h1 id="本地查看效果"><a href="#本地查看效果" class="headerlink" title="本地查看效果"></a>本地查看效果</h1><p>执行以下命令，执行完即可登录 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看效果</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo generate$ hexo server</span></pre></td></tr></table></figure>
+
+<p>显示以下信息说明操作成功：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">INFO Hexo is running at http:&#x2F;&#x2F;0.0.0.0:4000&#x2F;. Press Ctrl+C to stop.</span></pre></td></tr></table></figure>
+
+<p>登录 <a href="http://localhost:4000/" target="_blank" rel="noopener">http://localhost:4000/</a> 查看效果：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/09.png" alt="09"></p>
+<h1 id="将博客部署到-Github-Pages-上"><a href="#将博客部署到-Github-Pages-上" class="headerlink" title="将博客部署到 Github Pages 上"></a>将博客部署到 Github Pages 上</h1><p>到目前为止，我们的本地博客就成功搭建了，但是现在我们只能通过本地连接查看博客，我们要做的是让其他人也能够访问我们的博客，这就需要我们将博客部署到Github Pages上</p>
+<p>一、注册 Github 账户：<a href="https://github.com/" target="_blank" rel="noopener">点击此处</a>访问 Github 官网，点击 Sign Up 注册账户</p>
+<p>二、创建项目代码库：点击 New repository 开始创建，步骤及注意事项见图：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/10.png" alt="10"></p>
+<p>三、配置 SSH 密钥：只有配置好 SSH 密钥后，我们才可以通过 git 操作实现本地代码库与 Github 代码库同步，在你第一次新建的文件夹里面（如：我的文件夹为：Ｅ\TRHX_Blog） Git Bash Here 输入以下命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;your email@example.com&quot;</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;引号里面填写你的邮箱地址，比如我的是tanrenhou@126.com</span></pre></td></tr></table></figure>
+
+<p>之后会出现：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Generating public&#x2F;private rsa key pair.</span></pre></td></tr><tr><td class="code"><pre><span class="line">Enter file in which to save the key (&#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa):</span></pre></td></tr><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;到这里可以直接回车将密钥按默认文件进行存储</span></pre></td></tr></table></figure>
+
+<p>然后会出现：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Enter passphrase (empty for no passphrase):&#x2F;&#x2F;这里是要你输入密码，其实不需要输什么密码，直接回车就行Enter same passphrase again:</span></pre></td></tr></table></figure>
+
+<p>接下来屏幕会显示：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Your identification has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.</span></pre></td></tr><tr><td class="code"><pre><span class="line">Your public key has been saved in &#x2F;c&#x2F;Users&#x2F;you&#x2F;.ssh&#x2F;id_rsa.pub.</span></pre></td></tr><tr><td class="code"><pre><span class="line">The key fingerprint is:</span></pre></td></tr><tr><td class="code"><pre><span class="line">这里是各种字母数字组成的字符串，结尾是你的邮箱</span></pre></td></tr><tr><td class="code"><pre><span class="line">The key&#39;s randomart image is:</span></pre></td></tr><tr><td class="code"><pre><span class="line">这里也是各种字母数字符号组成的字符串</span></pre></td></tr></table></figure>
+
+<p>运行以下命令，将公钥的内容复制到系统粘贴板上</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">clip &lt; ~&#x2F;.ssh&#x2F;id_rsa.pub</span></pre></td></tr></table></figure>
+
+<p>四、在 GitHub 账户中添加你的公钥</p>
+<p>1.登陆 GitHub，进入 Settings：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/11.png" alt="11"></p>
+<p>2.点击 SSH and GPG Keys：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/12.png" alt="12"></p>
+<p>3.选择 New SSH key：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/13.png" alt="13"></p>
+<p>4.粘贴密钥：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/14.png" alt="14"></p>
+<p>五、测试</p>
+<p>输入以下命令：注意：<a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>不要做任何更改！</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span></pre></td></tr></table></figure>
+
+<p>之后会显示：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/15.png" alt="15"></p>
+<p>输入 yes 后会显示：<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/16.png" alt="16"><br>此时表示设置正确</p>
+<p>六、配置 Git 个人信息</p>
+<p>Git 会根据用户的名字和邮箱来记录提交，GitHub 也是用这些信息来做权限的处理，输入以下命令进行个人信息的设置，把名称和邮箱替换成你自己的，名字可以不是 GitHub 的昵称，但为了方便记忆，建议与 GitHub 一致</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;此处填你的用户名&quot;$ git config --global user.email &quot;此处填你的邮箱&quot;</span></pre></td></tr></table></figure>
+
+<p>到此为止 SSH Key 配置成功，本机已成功连接到 Github</p>
+<h1 id="将本地的-Hexo-文件更新到-Github-的库中"><a href="#将本地的-Hexo-文件更新到-Github-的库中" class="headerlink" title="将本地的 Hexo 文件更新到 Github 的库中"></a>将本地的 Hexo 文件更新到 Github 的库中</h1><p>一、登录 Github 打开自己的项目 yourname.github.io<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/17.png" alt="17"></p>
+<p>二、鼠标移到 Clone or download 按钮，选择 Use SSH<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/18.png" alt="18"></p>
+<p>三、一键复制地址<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/19.png" alt="19"></p>
+<p>四、打开你创建的 Hexo 文件夹（如：E:\TRHX_Blog\Hexo），右键用记事本（或者Notepad++、Vs Code等）打开该文件夹下的 _config.yml 文件<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/20.png" alt="20"></p>
+<p>五、按下图修改 _config.yml 文件并保存<br><img src="https://cdn.jsdelivr.net/gh/TRHX/ImageHosting/ITRHX-PIC/A02/21.png" alt="21"></p>
+<p>六、在 Hexo 文件夹下分别执行以下命令</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g$ hexo d</span></pre></td></tr></table></figure>
+
+
+
+<p>或者直接执行</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo g -d</span></pre></td></tr></table></figure>
+
+<p>执行完之后会让你输入你的 Github 的账号和密码，如果此时报以下错误，说明你的 deployer 没有安装成功</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">ERROR Deployer not found: git</span></pre></td></tr></table></figure>
+
+<p>需要执行以下命令再安装一次：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span></pre></td></tr></table></figure>
+
+<p>再执行 <code>hexo g -d</code>，你的博客就会部署到 Github 上了</p>
+<p>七、访问博客</p>
+<p>你的博客地址：https://你的用户名.github.io，比如我的是：<a href="https://trhx.github.io/" target="_blank" rel="noopener">https://trhx.github.io</a> ，现在每个人都可以通过此链接访问你的博客了</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客优化之Next主题加载优化性能提升</title>
     <url>/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96%E6%80%A7%E8%83%BD%E6%8F%90%E5%8D%87/</url>
     <content><![CDATA[<p><img src="https://w.wallhaven.cc/full/kw/wallhaven-kwr321.jpg" alt="head"></p>
