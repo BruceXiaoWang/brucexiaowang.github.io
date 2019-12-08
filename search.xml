@@ -1,6 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo博客美化之安装DaoVoice实现在线聊天功能</title>
+    <url>/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AE%89%E8%A3%85DaoVoice%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E5%8A%9F%E8%83%BD/</url>
+    <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/95/wallhaven-955dg1.png" alt="General 2560x1080 women fan art futuristic cyberpunk ultrawide ultra-wide"></p>
+<p>之前逛大佬们的博客发现，发现有个在线聊天功能还不错，于是乎自己也加一个玩玩。</p>
+<a id="more"></a>
+
+<h1 id="注册"><a href="#注册" class="headerlink" title="注册"></a>注册</h1><p>首先需要注册一个 DaoVoice，<a href="http://dashboard.daovoice.io/get-started?invite_code=7f3d6e70">点击注册</a>。</p>
+<p>注册成功后，进入后台控制台，进入到 <code>应用设置--&gt;安装到网站</code> 页面，可以得到一个 <code>app_id</code>：</p>
+<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/09/ef6QWbVyanHUSJ7.png" alt="image.png"></p>
+<h1 id="修改head-swig"><a href="#修改head-swig" class="headerlink" title="修改head.swig"></a>修改head.swig</h1><p>修改<code>/themes/next/layout/_partials/head.swig</code>文件，添加内容如下，位置随意，</p>
+<p><strong>注意</strong>：’widget.daovoice.io/widget/app_id.js’中js文件名改成自己的id就行。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&#123;% <span class="keyword">if</span> theme.daovoice %&#125;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &lt;script&gt;</span></pre></td></tr><tr><td class="code"><pre><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">i,s,o,g,r,a,m</span>)</span>&#123;i[<span class="string">"DaoVoiceObject"</span>]=r;i[r]=i[r]||<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;(i[r].q=i[r].q||[]).push(<span class="built_in">arguments</span>)&#125;,i[r].l=<span class="number">1</span>*<span class="keyword">new</span> <span class="built_in">Date</span>();a=s.createElement(o),m=s.getElementsByTagName(o)[<span class="number">0</span>];a.async=<span class="number">1</span>;a.src=g;a.charset=<span class="string">"utf-8"</span>;m.parentNode.insertBefore(a,m)&#125;)(<span class="built_in">window</span>,<span class="built_in">document</span>,<span class="string">"script"</span>,(<span class="string">'https:'</span> == <span class="built_in">document</span>.location.protocol ? <span class="string">'https:'</span> : <span class="string">'http:'</span>) + <span class="string">"//widget.daovoice.io/widget/app_id.js"</span>,<span class="string">"daovoice"</span>)</span></pre></td></tr><tr><td class="code"><pre><span class="line">  daovoice(<span class="string">'init'</span>, &#123;</span></pre></td></tr><tr><td class="code"><pre><span class="line">      app_id: <span class="string">"&#123;&#123;theme.daovoice_app_id&#125;&#125;"</span></span></pre></td></tr><tr><td class="code"><pre><span class="line">    &#125;);</span></pre></td></tr><tr><td class="code"><pre><span class="line">  daovoice(<span class="string">'update'</span>);</span></pre></td></tr><tr><td class="code"><pre><span class="line">  &lt;<span class="regexp">/script&gt;</span></span></pre></td></tr><tr><td class="code"><pre><span class="line"><span class="regexp">&#123;% endif %&#125;</span></span></pre></td></tr></table></figure>
+
+<h1 id="修改主题配置文件"><a href="#修改主题配置文件" class="headerlink" title="修改主题配置文件"></a>修改主题配置文件</h1><p>在主题配置文件 <code>_config.yml</code>，添加如下代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># Online contact</span></pre></td></tr><tr><td class="code"><pre><span class="line">daovoice: true</span></pre></td></tr><tr><td class="code"><pre><span class="line">daovoice_app_id:   # 这里填你刚才获得的 app_id</span></pre></td></tr></table></figure>
+
+<h1 id="聊天窗口配置"><a href="#聊天窗口配置" class="headerlink" title="聊天窗口配置"></a>聊天窗口配置</h1><p>应用设置–&gt; 聊天设置修改主题，修改图标颜色和位置</p>
+<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/09/2zLaW4ts3y96dBf.png" alt="image.png"></p>
+<h1 id="绑定微信"><a href="#绑定微信" class="headerlink" title="绑定微信"></a>绑定微信</h1><p>最后还可以到右上角选择管理员，微信绑定,可以绑定你的微信号，关注公众号后，就可以实时收发消息，有新的消息也会通过微信通知，设置页面如下：</p>
+<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/09/oP32lAWi7pOTRSn.png" alt="image.png"></p>
+<p>至此，网页的在线联系功能已经完成，重新<code>hexo g</code>，<code>hexo d</code>上传GitHub后，页面上就能看到效果了。</p>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>hexo博客美化之自定义友链页面</title>
     <url>/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/4y/wallhaven-4yl2od.jpg" alt="General 1920x1080 cyborg technology cigarettes bare shoulders pipes tattoo bionics soft shading digital art wires smoke cyberpunk futuristic helmet sideboob fictional characters"></p>
@@ -415,8 +445,8 @@
         <category>爬虫</category>
       </categories>
       <tags>
-        <tag>json</tag>
         <tag>疑难问题</tag>
+        <tag>json</tag>
       </tags>
   </entry>
   <entry>
