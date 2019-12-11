@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://www.guaini.blog/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95/</loc>
+    <lastmod>2019-12-11</lastmod>
+  </url>  <url>
     <loc>http://www.guaini.blog/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/</loc>
     <lastmod>2019-12-10</lastmod>
   </url>  <url>
@@ -8,9 +11,6 @@
     <lastmod>2019-12-10</lastmod>
   </url>  <url>
     <loc>http://www.guaini.blog/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/</loc>
-    <lastmod>2019-12-10</lastmod>
-  </url>  <url>
-    <loc>http://www.guaini.blog/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95/</loc>
     <lastmod>2019-12-10</lastmod>
   </url>  <url>
     <loc>http://www.guaini.blog/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F/</loc>
