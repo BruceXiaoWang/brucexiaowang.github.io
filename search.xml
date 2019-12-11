@@ -20,7 +20,8 @@
 <p>选择添加站点：</p>
 <p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/11/jAgv9DI18LUTE56.png" alt="image.png"></p>
 <h2 id="验证站点"><a href="#验证站点" class="headerlink" title="验证站点"></a>验证站点</h2><p>提供三种验证方式：</p>
-<p>文件验证：下载给定的文件，将其放到本地主题目录 source 文件夹，然后部署上去完成验证<br>HTML 标签验证：一般是给一个 meta 标签，放到首页 <head> 与 <meta name="generator" content="Hexo 4.0.0"></head> 标签之间即可完成验证<br>CNAME 验证：个人觉得这种方法最简单，去域名 DNS 添加一个 CNAME 记录即可完成验证</p>
+<p>文件验证：下载给定的文件，将其放到本地主题目录 source 文件夹，然后部署上去完成验证<br>HTML 标签验证：一般是给一个 meta 标签，放到首页 <head> 与 <meta name="generator" content="Hexo 4.0.0"><link rel="alternate" href="/atom.xml" title="怪你過分美麗" type="application/atom+xml">
+</head> 标签之间即可完成验证<br>CNAME 验证：个人觉得这种方法最简单，去域名 DNS 添加一个 CNAME 记录即可完成验证</p>
 <p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/11/cICoTf1pQjw3Z9F.png" alt="image.png"><br>百度提供了自动提交和手动提交两种方式，其中自动提交又分为主动推送、自动推送和 sitemap 三种方式，以下是官方给出的解释：</p>
 <p>主动推送：最为快速的提交方式，推荐您将站点当天新产出链接立即通过此方式推送给百度，以保证新链接可以及时被百度收录</p>
 <p>自动推送：是轻量级链接提交组件，将自动推送的 JS 代码放置在站点每一个页面源代码中，当页面被访问时，页面链接会自动推送给百度，有利于新页面更快被百度发现</p>
