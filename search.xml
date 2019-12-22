@@ -1,8 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>hexo博客优化之文章链接持久化</title>
+    <url>/archives/106053ca.html</url>
+    <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/d5/wallhaven-d59263.jpg" alt="General 1920x1080 cyberpunk science fiction neon"></p>
+<p>场景：由于hexo 默认的链接是 <code>http://xxx.yy.com/2019/12/22/hello-world</code> 这种类型的，这源于站点目录下的配置 <code>_config.yml</code> 里的配置 <code>:permalink: :year/:month/:day/:title/</code>，这种默认配置的缺点就是一般文件名是中文，导致 url 链接里有中文出现，这会造成很多问题，如文末的版权声明会很臃肿不美观，也不利于 SEO。</p>
+<a id="more"></a>
+
+<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/22/4Z5UO1sbt6KpeSN.png" alt="image.png"></p>
+<p><code>hexo-abbrlink</code>插件很好的解决了这个问题，它会自动根据文章时间点生成最终博客文章链接，后期不管怎么修改文章永久链接都不会再变。同时文章链接层级更短，使得博客文章更利于SEO。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>在站点根目录使用 <code>git bash</code> 执行命令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">npm install hexo-abbrlink --save</span></pre></td></tr></table></figure>
+
+<h1 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h1><p>打开根目录下的 <code>_config.yml</code> 文件，搜索permalink，注释掉之前的设置，修改为如下配置</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"># permalink: :year&#x2F;:month&#x2F;:day&#x2F;:title&#x2F;</span></pre></td></tr><tr><td class="code"><pre><span class="line"># permalink_defaults:</span></pre></td></tr><tr><td class="code"><pre><span class="line">permalink: posts&#x2F;:abbrlink.html</span></pre></td></tr><tr><td class="code"><pre><span class="line">abbrlink:</span></pre></td></tr><tr><td class="code"><pre><span class="line">  alg: crc32  # 算法：crc16(default) and crc32</span></pre></td></tr><tr><td class="code"><pre><span class="line">  rep: hex    # 进制：dec(default) and hex</span></pre></td></tr></table></figure>
+
+<h1 id="样品"><a href="#样品" class="headerlink" title="样品"></a>样品</h1><p>算法和进制设置不同的话会有不同的效果：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">crc16 &amp; hex</span></pre></td></tr><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;post.zz173.com&#x2F;posts&#x2F;66c8.html</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">crc16 &amp; dec</span></pre></td></tr><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;post.zz173.com&#x2F;posts&#x2F;65535.html</span></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">crc32 &amp; hex</span></pre></td></tr><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;post.zz173.com&#x2F;posts&#x2F;8ddf18fb.html</span></pre></td></tr><tr><td class="code"><pre><span class="line"></span></pre></td></tr><tr><td class="code"><pre><span class="line">crc32 &amp; dec</span></pre></td></tr><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;post.zz173.com&#x2F;posts&#x2F;1690090958.html</span></pre></td></tr></table></figure>
+
+<h1 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h1><p>由于crc16的最大帖子数是65535。（对于个人博客网站，此数字可能不错）</p>
+<h1 id="完成"><a href="#完成" class="headerlink" title="完成"></a>完成</h1><p>接下来重新部署三连，可以看到我们的文章路径变成了 <code>/posts/xxxxx.html</code>，接下来就算我们将文字标题命名为中文也没问题了。</p>
+<h1 id="参考链接："><a href="#参考链接：" class="headerlink" title="参考链接："></a>参考链接：</h1><ul>
+<li><a href="https://github.com/rozbo/hexo-abbrlink">https://github.com/rozbo/hexo-abbrlink</a></li>
+<li><a href="https://ai.xgoogle.xyz/archives/52ccf080.html">https://ai.xgoogle.xyz/archives/52ccf080.html</a></li>
+</ul>
+]]></content>
+      <categories>
+        <category>hexo</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>PHP获取访客ip、地址、系统、浏览器等信息</title>
-    <url>/PHP%E8%8E%B7%E5%8F%96%E8%AE%BF%E5%AE%A2ip%E3%80%81%E5%9C%B0%E5%9D%80%E3%80%81%E7%B3%BB%E7%BB%9F%E3%80%81%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AD%89%E4%BF%A1%E6%81%AF/</url>
+    <url>/archives/18837.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/j5/wallhaven-j5yloy.jpg" alt="General 2560x1440 digital digital art artwork Photoshop edit neon lights neon lights city cityscape building architecture people water reflection alone loneliness silhouette photography umbrella cold landscape mist winter Photorealism women outdoors street"></p>
 <a id="more"></a>
 
@@ -22,13 +56,13 @@
   </entry>
   <entry>
     <title>在 Windows和Linux 下安装部署 PHP 开发环境</title>
-    <url>/%E5%9C%A8-Windows%E5%92%8CLinux-%E4%B8%8B%E5%AE%89%E8%A3%85%E9%83%A8%E7%BD%B2-PHP-%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</url>
+    <url>/archives/19594.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/dg/wallhaven-dgow5j.jpg" alt="General 1920x1080 bed sunset digital art cityscape city building window neon drawing RicoDZ"></p>
 <p>PHP是世界上最好的语言！！！</p>
 <a id="more"></a>
 
 <p>对于php开发初学者来说搭建一个php运行坏境是一个非常繁琐的事情，好在很多公司开发了一键搭建php安装环境，一键进行php环境配置。如：phpStudy 和 XAMPP等集成工具，这里拿XAMPP进行介绍。</p>
-<h1 id="在Windows上搭建"><a href="#在Windows上搭建" class="headerlink" title="在Windows上搭建"></a>在Windows上搭建</h1><p>访问XAMPP官网：<a href="https://www.apachefriends.org/zh_cn/index.html，选择">https://www.apachefriends.org/zh_cn/index.html，选择</a> XAMPP for Windows，页面跳转后开始下载（如果下载缓慢的挂可以进行翻墙）。</p>
+<h1 id="在Windows上搭建"><a href="#在Windows上搭建" class="headerlink" title="在Windows上搭建"></a>在Windows上搭建</h1><p>访问XAMPP官网：<a href="https://www.apachefriends.org/zh_cn/index.html">https://www.apachefriends.org/zh_cn/index.html</a>，选择 XAMPP for Windows，页面跳转后开始下载（如果下载缓慢的挂可以进行翻墙）。</p>
 <p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/18/OHWVCmsi5zfTKpP.png" alt="image.png"></p>
 <p>下载完成后双击下载的exe文件进行安装，无脑下一步即可。</p>
 <p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/18/iaqZWXFVDfdp4nT.png" alt="image.png"></p>
@@ -83,7 +117,7 @@
   </entry>
   <entry>
     <title>hexo博客优化之提交百度、谷歌搜索引擎收录</title>
-    <url>/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E6%8F%90%E4%BA%A4%E7%99%BE%E5%BA%A6%E3%80%81%E8%B0%B7%E6%AD%8C%E6%90%9C%E7%B4%A2%E5%BC%95%E6%93%8E%E6%94%B6%E5%BD%95/</url>
+    <url>/archives/55894.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/95/wallhaven-957odx.jpg" alt="People 2048x1319 women blonde portrait neon sunglasses reflection"></p>
 <a id="more"></a>
 
@@ -167,7 +201,7 @@
   </entry>
   <entry>
     <title>hexo博客美化之安装DaoVoice实现在线聊天功能</title>
-    <url>/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B9%8B%E5%AE%89%E8%A3%85DaoVoice%E5%AE%9E%E7%8E%B0%E5%9C%A8%E7%BA%BF%E8%81%8A%E5%A4%A9%E5%8A%9F%E8%83%BD/</url>
+    <url>/archives/2426.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/lq/wallhaven-lq38lp.jpg" alt="General 2560x1440 digital art head fantasy art profile hands glowing neon abstract artwork 3d object "></p>
 <p>之前逛大佬们的博客发现，发现有个在线聊天功能还不错，于是乎自己也加一个玩玩。</p>
 <a id="more"></a>
@@ -197,7 +231,7 @@
   </entry>
   <entry>
     <title>hexo博客美化之自定义友链页面</title>
-    <url>/hexo%E5%8D%9A%E5%AE%A2%E7%BE%8E%E5%8C%96%E4%B9%8B%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8F%8B%E9%93%BE%E9%A1%B5%E9%9D%A2/</url>
+    <url>/archives/13407.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/q6/wallhaven-q6lw8l.jpg" alt="People 2500x1667 Kristina Borodkina cyberpunk long hair straight hair tattoo cyborg couch gun knee high socks black clothing purple pink neon lights skirt blue"></p>
 <p>NexT 主题自带的友情链接的位置是在侧栏的 Social Link 中，位置不太明显，而且容量比较小，不美观。因此可以自定义一个特定的页面，单独显示友情链接。</p>
 <a id="more"></a>
@@ -237,7 +271,7 @@
   </entry>
   <entry>
     <title>java实现定时器的四种方式</title>
-    <url>/java%E5%AE%9E%E7%8E%B0%E5%AE%9A%E6%97%B6%E5%99%A8%E7%9A%84%E5%9B%9B%E7%A7%8D%E6%96%B9%E5%BC%8F/</url>
+    <url>/archives/12995.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/zm/wallhaven-zm5eyy.jpg" alt="General 1920x1200 futuristic cyberpunk artwork vehicle cyan pink"></p>
 <p>java中Timer定时器的使用。</p>
 <a id="more"></a>
@@ -261,7 +295,7 @@
   </entry>
   <entry>
     <title>JFinal操作数据库的常用方法</title>
-    <url>/JFinal%E6%93%8D%E4%BD%9C%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%B8%B8%E7%94%A8%E6%96%B9%E6%B3%95/</url>
+    <url>/archives/58250.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/73/wallhaven-733m6v.jpg" alt="General 1920x1080 cyberpunk futuristic weapon women"></p>
 <a id="more"></a>
 
@@ -313,7 +347,7 @@
   </entry>
   <entry>
     <title>hexo博客优化之图片懒加载</title>
-    <url>/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E5%9B%BE%E7%89%87%E6%87%92%E5%8A%A0%E8%BD%BD/</url>
+    <url>/archives/63242.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/39/wallhaven-3997d3.jpg" alt="People 2000x1125 Lenar Abdrakhmanov women model portrait face women with shades looking into the distance neon neon lights"></p>
 <p>由于我的博客中插入了很多图片，所以导致页面加载的时候大部分时间都是在加载图片，严重的降低了用户体验，图片懒加载的出现很好的解决了这个问题。</p>
 <a id="more"></a>
@@ -351,7 +385,7 @@
   </entry>
   <entry>
     <title>hexo博客优化之双线部署到Coding Pages和Github Pages</title>
-    <url>/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E5%8F%8C%E7%BA%BF%E9%83%A8%E7%BD%B2%E5%88%B0Coding-Pages%E5%92%8CGithub-Pages/</url>
+    <url>/archives/15060.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/lq/wallhaven-lqqdyp.jpg" alt="Anime 1306x900 anime anime girls short hair gun rain water weapon cyberpunk GUWEIZ girls with guns"></p>
 <p>双线部署到Coding Pages和Github Pages可以解决Github国内访问慢和Coding易宕机的问题。</p>
 <a id="more"></a>
@@ -390,7 +424,7 @@
   </entry>
   <entry>
     <title>使用Github Pages和Hexo搭建自己的独立博客</title>
-    <url>/%E4%BD%BF%E7%94%A8Github-Pages%E5%92%8CHexo%E6%90%AD%E5%BB%BA%E8%87%AA%E5%B7%B1%E7%9A%84%E7%8B%AC%E7%AB%8B%E5%8D%9A%E5%AE%A2/</url>
+    <url>/archives/11099.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/zx/wallhaven-zxy9my.jpg" alt="General 1920x1080 Wang Ke concept art cyberpunk"></p>
 <p>这是一篇有关如何使用 Github Pages 和 Hexo 搭建属于自己独立博客的详尽教程</p>
 <a id="more"></a>
@@ -496,7 +530,7 @@
   </entry>
   <entry>
     <title>hexo博客优化之Next主题加载优化性能提升</title>
-    <url>/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8BNext%E4%B8%BB%E9%A2%98%E5%8A%A0%E8%BD%BD%E4%BC%98%E5%8C%96%E6%80%A7%E8%83%BD%E6%8F%90%E5%8D%87/</url>
+    <url>/archives/6849.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/kw/wallhaven-kwr321.jpg" alt="head"></p>
 <p>基于Github-pages搭建的Next主题的Hexo博客要怎么优化呢？</p>
 <a id="more"></a>
@@ -557,7 +591,7 @@
   </entry>
   <entry>
     <title>hexo博客优化之解决国外域名在国内访问慢的问题</title>
-    <url>/hexo%E5%8D%9A%E5%AE%A2%E4%BC%98%E5%8C%96%E4%B9%8B%E8%A7%A3%E5%86%B3%E5%9B%BD%E5%A4%96%E5%9F%9F%E5%90%8D%E5%9C%A8%E5%9B%BD%E5%86%85%E8%AE%BF%E9%97%AE%E6%85%A2%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <url>/archives/4730.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/lq/wallhaven-lqlk7q.png" alt="Anime 1920x1080 Ghost in the Shell Kusanagi Motoko Motoko Kusanagi anime Major cyberpunk cyborg"></p>
 <h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>目前我使用的是国外域名<strong>NameSilo</strong>，由于是直接使用的域名注册商的解析，所以会出现在国内直接访问的话，打开速度慢的问题，所以我们需要将<strong>NameSilo</strong>域名解析到DNSPod，以提升访问速度。</p>
 <a id="more"></a>
@@ -592,7 +626,7 @@
   </entry>
   <entry>
     <title>解决json的value中含有双引号导致解析错误的问题</title>
-    <url>/%E8%A7%A3%E5%86%B3json%E7%9A%84value%E4%B8%AD%E5%90%AB%E6%9C%89%E5%8F%8C%E5%BC%95%E5%8F%B7%E5%AF%BC%E8%87%B4%E8%A7%A3%E6%9E%90%E9%94%99%E8%AF%AF%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <url>/archives/57064.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/lq/wallhaven-lqgoml.jpg" alt="General 1920x1114 motorcycle cityscape street light street Asian Asia women lights cyberpunk futuristic reflection night digital art cyan neon lights"> </p>
 <h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>在爬虫中经常会遇到一下json格式的数据需要进行解析，但是如果这段json中value中含有双引号的话就会导致解析错误，报错遗漏数据的情况。</p>
 <a id="more"></a>
@@ -610,13 +644,13 @@
         <category>爬虫</category>
       </categories>
       <tags>
-        <tag>疑难问题</tag>
         <tag>json</tag>
+        <tag>疑难问题</tag>
       </tags>
   </entry>
   <entry>
     <title>解决远程桌面无法拷贝文件的问题</title>
-    <url>/%E8%A7%A3%E5%86%B3%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2%E6%97%A0%E6%B3%95%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6%E7%9A%84%E9%97%AE%E9%A2%98/</url>
+    <url>/archives/16488.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/4y/wallhaven-4yzv5d.jpg" alt="General 2931x1430 face fantasy art cyberpunk Maciej Kuciara"></p>
 <h3 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h3><p>今天在通过系统自带的远程桌面备份ADSL机器上的程序的时候遇到有一台机器在远程的机器什么互相拷贝问题是没有问题的，只是不能通过远程机器拷贝到本地！解决之后记录一下方法。</p>
 <a id="more"></a>
@@ -635,7 +669,7 @@
   </entry>
   <entry>
     <title>东京压缩</title>
-    <url>/%E4%B8%9C%E4%BA%AC%E5%8E%8B%E7%BC%A9/</url>
+    <url>/archives/37760.html</url>
     <content><![CDATA[<p> <img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/48/wallhaven-483d6y.jpg" alt="动漫1600x1074地铁火车站动漫"> </p>
 <p> &emsp;  &emsp; 德国出生的摄影师Michael Wolf认为乘坐东京地铁太过拥挤，犹如一场噩梦，他常常看到因为车厢人太多，乘客的脸被挤到贴着玻璃，十分恐怖。Michael以此为灵感，创作了一组摄影作品，名为“东京压缩”（Tokyo compression ）。 </p>
 <a id="more"></a>
@@ -668,7 +702,7 @@
   </entry>
   <entry>
     <title>使用轻量级工具处理emoji表情</title>
-    <url>/%E4%BD%BF%E7%94%A8%E8%BD%BB%E9%87%8F%E7%BA%A7%E5%B7%A5%E5%85%B7%E5%A4%84%E7%90%86emoji%E8%A1%A8%E6%83%85/</url>
+    <url>/archives/6686.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/zm/wallhaven-zmvgkj.jpg" alt="封面"></p>
 <p><strong>场景：</strong>在爬虫工作中经常会遇到带有emoji表情的数据，存入到MySQL库的时候会出错，当然可以通过更改表的编码为 ‘<em>utf8mb4</em>’ 解决问题，但是大部分时间是不允许直接更改数据库的，所以就需要进行转换一下。</p>
 <a id="more"></a>
@@ -715,7 +749,7 @@
   </entry>
   <entry>
     <title>Markdown语法介绍</title>
-    <url>/Markdown%E8%AF%AD%E6%B3%95%E4%BB%8B%E7%BB%8D/</url>
+    <url>/archives/3313.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/wy/wallhaven-wyw8wr.jpg" alt="封面"></p>
 <p><em>原文博客地址</em>：<a href="https://github.com/younghz/Markdown#1-markdown是什么">Markdown语法</a></p>
 <h3 id="1-Markdown是什么？"><a href="#1-Markdown是什么？" class="headerlink" title="1. Markdown是什么？"></a>1. Markdown是什么？</h3><p><strong>Markdown</strong>是一种轻量级<strong>标记语言</strong>，它以纯文本形式(<em>易读、易写、易更改</em>)编写文档，并最终以HTML格式发布。<br><strong>Markdown</strong>也可以理解为将以MARKDOWN语法编写的语言转换成HTML内容的工具。</p>
@@ -889,7 +923,7 @@
   </entry>
   <entry>
     <title>Linux下vi和vim有什么区别</title>
-    <url>/Linux%E4%B8%8Bvi%E5%92%8Cvim%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/</url>
+    <url>/archives/6014.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/md/wallhaven-mdlew8.jpg" alt="通用1920x877赛博朋克自行车女性亚洲未来派科幻小说粉红色硕"></p>
 <p> *<em>vim是vi的增强版，完全兼容vi。vim优势主要体现在以下几个方面:  *</em></p>
 <a id="more"></a>
@@ -911,7 +945,7 @@
   </entry>
   <entry>
     <title>Sublime Text添加到鼠标右键菜单的教程方法</title>
-    <url>/Sublime%20Text%E6%B7%BB%E5%8A%A0%E5%88%B0%E9%BC%A0%E6%A0%87%E5%8F%B3%E9%94%AE%E8%8F%9C%E5%8D%95%E7%9A%84%E6%95%99%E7%A8%8B%E6%96%B9%E6%B3%95/</url>
+    <url>/archives/1663.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/p2/wallhaven-p2zve9.jpg" alt="General 1920x1080 digital art women futuristic fantasy art sword smoke Antoine Collignon fantasy girl cyberpunk ArtStation"></p>
 <p><strong>情景</strong>：我们在安装的 Sublime Text 后发现没有右键菜单 ， 打开一些文件不是很方便 ， 下面是我的方法，希望有所帮助！</p>
 <a id="more"></a>
@@ -945,7 +979,7 @@
   </entry>
   <entry>
     <title>Hello World</title>
-    <url>/hello-world/</url>
+    <url>/archives/16107.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/kw/wallhaven-kwzgld.jpg" alt="General 1920x1115 cyberpunk digital science fiction futuristic Hong Kong vehicle gun"></p>
 <p>首先，恭喜自己有了一个属于自己的博客 , 哈哈 !</p>
 <a id="more"></a>
