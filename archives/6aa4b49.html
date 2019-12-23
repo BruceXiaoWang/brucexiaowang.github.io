@@ -88,17 +88,15 @@
 
 
 
-<meta name="description" content="问题这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（打赏源码），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。 仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：  虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天">
 <meta name="keywords" content="https,疑难问题">
 <meta property="og:type" content="article">
 <meta property="og:title" content="记一次https页面插入iframe遇到的问题">
 <meta property="og:url" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;archives&#x2F;6aa4b49.html">
 <meta property="og:site_name" content="怪你過分美麗">
-<meta property="og:description" content="问题这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（打赏源码），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。 仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：  虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:updated_time" content="2019-12-23T16:16:48.935Z">
+<meta property="og:updated_time" content="2019-12-23T16:21:47.495Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
 
@@ -460,6 +458,8 @@
 
       
         <p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/6q/wallhaven-6qy227.jpg" alt="People 2048x1350 women women with glasses sunglasses choker blonde neon face portrait"></p>
+<a id="more"></a>
+
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（<a href="https://github.com/TinyJay/donate-page">打赏源码</a>），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。</p>
 <p>仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：</p>
 <p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/23/mcU9yx5P2Ewnfq1.png" alt="image.png"></p>
@@ -489,7 +489,7 @@
     <div>
       
         <br>
-        <iframe src="//106.12.185.172/donate" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:140px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <iframe src="https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:140px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
       
     </div>
 
@@ -1307,5 +1307,5 @@
 
   
 
-<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":250,"height":500,"position":"right","hOffset":0,"vOffset":-80},"mobile":{"show":true,"scale":0.5}});</script><script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script></body>
+<script>!function(e){var c=Array.prototype.slice.call(document.querySelectorAll("img[data-original]"));function i(){for(var r=0;r<c.length;r++)t=c[r],0<=(n=t.getBoundingClientRect()).top&&0<=n.left&&n.top<=(e.innerHeight||document.documentElement.clientHeight)&&function(){var t,n,e,i,o=c[r];t=o,n=function(){c=c.filter(function(t){return o!==t})},e=new Image,i=t.getAttribute("data-original"),e.onload=function(){t.src=i,n&&n()},e.src=i}();var t,n}i(),e.addEventListener("scroll",function(){var t,n;t=i,n=e,clearTimeout(t.tId),t.tId=setTimeout(function(){t.call(n)},500)})}(this);</script><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"log":false,"model":{"jsonPath":"/live2dw/assets/hijiki.model.json"},"display":{"superSample":2,"width":250,"height":500,"position":"right","hOffset":0,"vOffset":-80},"mobile":{"show":true,"scale":0.5}});</script></body>
 </html>

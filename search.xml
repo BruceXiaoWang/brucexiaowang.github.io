@@ -4,6 +4,8 @@
     <title>记一次https页面插入iframe遇到的问题</title>
     <url>/archives/6aa4b49.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/6q/wallhaven-6qy227.jpg" alt="People 2048x1350 women women with glasses sunglasses choker blonde neon face portrait"></p>
+<a id="more"></a>
+
 <h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（<a href="https://github.com/TinyJay/donate-page">打赏源码</a>），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。</p>
 <p>仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：</p>
 <p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/23/mcU9yx5P2Ewnfq1.png" alt="image.png"></p>
