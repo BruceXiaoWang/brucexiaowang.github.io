@@ -96,7 +96,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:updated_time" content="2019-12-23T16:21:47.495Z">
+<meta property="og:updated_time" content="2019-12-23T16:39:58.219Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
 
@@ -420,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  491
+                  566
                 </span>
               
 
@@ -436,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -469,6 +469,7 @@
 <h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>使用一个https服务器重定向http来代替直接使用不安全的URL设置其location属性，也可以实现正常的加载。</p>
 <p>如：<a href="https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/">https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/</a></p>
 <h1 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h1><p>如果你的网站同时准备了 https 资源和 http 资源，那么，可以使用相对协议可以帮助你实现当网站引入的都是 http 资源，网站域名更换为 https 后的无缝切换。<br>具体使用方法为：<code>iframe src=&quot;//106.12.185.172/donate&quot; &gt;&lt;/iframe&gt;</code>简而言之，就是将URL的协议（http、https）去掉，只保留//及后面的内容。这样，在使用https的网站中，浏览器会通过https请求URL，否则就通过http发送请求。</p>
+<h1 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h1><p>直接把赞赏的源码放到hexo博客的source目录下，然后iframe 设置为<code>iframe src=&quot;https://guaini.blog/donate&quot; &gt;&lt;/iframe&gt;</code>，并在站点的配置文件_config.yml中进行如下设置：<code>skip_render: donate/*</code>，即对donate文件夹下的全部文件不进行渲染。</p>
 
       
     </div>
@@ -489,7 +490,7 @@
     <div>
       
         <br>
-        <iframe src="https://guaini.blog/simple/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:180px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
+        <iframe src="https://guaini.blog/donate/" style="overflow-x:hidden;overflow-y:hidden; border:0xp none #fff; min-height:180px; width:100%;"  frameborder="0" scrolling="no" allowtransparency="true"></iframe>
       
     </div>
 
@@ -718,7 +719,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法一"><span class="nav-number">2.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法二"><span class="nav-number">3.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法三"><span class="nav-number">4.</span> <span class="nav-text">方法三</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法一"><span class="nav-number">2.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法二"><span class="nav-number">3.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法三"><span class="nav-number">4.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法四"><span class="nav-number">5.</span> <span class="nav-text">方法四</span></a></li></ol></div>
             
 
           </div>
