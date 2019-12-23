@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="hexo,域名," />
+  <meta name="keywords" content="https,疑难问题," />
 
 
 
@@ -88,22 +88,17 @@
 
 
 
-<meta name="description" content="场景目前我使用的是国外域名NameSilo，由于是直接使用的域名注册商的解析，所以会出现在国内直接访问的话，打开速度慢的问题，所以我们需要将NameSilo域名解析到DNSPod，以提升访问速度。">
-<meta name="keywords" content="hexo,域名">
+<meta name="description" content="问题这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（打赏源码），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。 仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：  虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天">
+<meta name="keywords" content="https,疑难问题">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hexo博客优化之解决国外域名在国内访问慢的问题">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;archives&#x2F;4730.html">
+<meta property="og:title" content="记一次https页面插入iframe遇到的问题">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;archives&#x2F;6aa4b49.html">
 <meta property="og:site_name" content="怪你過分美麗">
-<meta property="og:description" content="场景目前我使用的是国外域名NameSilo，由于是直接使用的域名注册商的解析，所以会出现在国内直接访问的话，打开速度慢的问题，所以我们需要将NameSilo域名解析到DNSPod，以提升访问速度。">
+<meta property="og:description" content="问题这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（打赏源码），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。 仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：  虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
 <meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
-<meta property="og:updated_time" content="2019-12-22T14:36:30.492Z">
+<meta property="og:updated_time" content="2019-12-23T16:16:48.935Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
 
@@ -135,7 +130,7 @@
 
 
 
-  <link rel="canonical" href="https://www.guaini.blog/archives/4730.html"/>
+  <link rel="canonical" href="https://www.guaini.blog/archives/6aa4b49.html"/>
 
 
 
@@ -151,7 +146,7 @@
 
 
 
-  <title>hexo博客优化之解决国外域名在国内访问慢的问题 | 怪你過分美麗</title>
+  <title>记一次https页面插入iframe遇到的问题 | 怪你過分美麗</title>
   
 
 
@@ -334,7 +329,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.guaini.blog/archives/4730.html">
+    <link itemprop="mainEntityOfPage" href="https://www.guaini.blog/archives/6aa4b49.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="蝶衣">
@@ -351,7 +346,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hexo博客优化之解决国外域名在国内访问慢的问题</h1>
+          <h1 class="post-title" itemprop="name headline">记一次https页面插入iframe遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -363,8 +358,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-11-18T00:05:16+08:00">
-                2019-11-18
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T23:23:51+08:00">
+                2019-12-23
               </time>
             
 
@@ -386,8 +381,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">hexo</span>
+                  <a href="/categories/%E5%9D%91/" itemprop="url" rel="index">
+                    <span itemprop="name">坑</span>
                   </a>
                 </span>
 
@@ -404,8 +399,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/archives/4730.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/archives/4730.html" itemprop="commentCount"></span>
+                <a href="/archives/6aa4b49.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/6aa4b49.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -427,7 +422,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  396
+                  491
                 </span>
               
 
@@ -464,29 +459,16 @@
       
 
       
-        <p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/lq/wallhaven-lqlk7q.png" alt="Anime 1920x1080 Ghost in the Shell Kusanagi Motoko Motoko Kusanagi anime Major cyberpunk cyborg"></p>
-<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><p>目前我使用的是国外域名<strong>NameSilo</strong>，由于是直接使用的域名注册商的解析，所以会出现在国内直接访问的话，打开速度慢的问题，所以我们需要将<strong>NameSilo</strong>域名解析到DNSPod，以提升访问速度。</p>
-<a id="more"></a>
-
-<h2 id="注册DNSPod账号"><a href="#注册DNSPod账号" class="headerlink" title="注册DNSPod账号"></a>注册DNSPod账号</h2><p> 在<a href="https://www.dnspod.cn/">DNSPod官网</a>注册账号 ，进行登录，选择<strong>DNS管理</strong>下的<strong>我的域名</strong>，点击添加域名，添加之前购买的<strong>NameSilo</strong>域名，然后确定。</p>
-<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/11/18/eTsnxFuVtaQBgNJ.png" alt="image.png"></p>
-<p>添加之后点击添加的域名，会看到DNSPod提供的两条默认的NS记录</p>
-<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/11/18/LXjtJf41kqiWrKa.png" alt="image.png"></p>
-<h2 id="修改Namesilo"><a href="#修改Namesilo" class="headerlink" title="修改Namesilo"></a>修改Namesilo</h2><p> 登录我们的<strong>Namesilo</strong>，选择Manage My Domains，进入域名管理页面。勾选你的域名，点击选项栏中的Change Nameservers。</p>
-<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/11/18/Dzn2uw68QdGpesX.png" alt="image.png"></p>
-<p> 将 <strong>NameServer 1</strong>， <strong>NameServer 2</strong> 改为DNSPod提供的两条NS记录，删除第三条NS记录，点击提交。 </p>
-<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/11/18/pSVWfbYRimzn1kB.png" alt="image.png"></p>
-<p>打开Namesilo的DNS<a href="https://www.namesilo.com/account_domain_manage_dns.php">管理页面</a> 删除默认的A记录和CNAME记录 。</p>
-<p><strong>NameServer</strong> 的修改需要一段时间，会在一到48小时生效 。</p>
-<h2 id="域名解析"><a href="#域名解析" class="headerlink" title="域名解析"></a>域名解析</h2><p> 打开Git Bash或cmd命令行控制台，输入： </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span></pre></td><td class="code"><pre><span class="line">ping yourname.github.io</span></pre></td></tr></table></figure>
-
-<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/11/18/yoE1szkZWI9Kvtx.png" alt="image.png"></p>
-<p> 返回结果为自己博客站点的IP地址。 </p>
-<p>登录进入DNSPod的域名控制台，选择要解析的域名，添加如下解析内容： </p>
-<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/11/18/T62mja5yRVCMnuL.png" alt="image.png"></p>
-<p> 解析时，记录类型选A或CNAME，A记录的记录值为上一步得到的IP地址，CNAME记录的记录值为你的Github Pages博客域名。同时添加两条记录可保证无论是否添加www都可以访问。</p>
-<p>最后只要等待 DNSPOD 的DNS解析和 Namesilo 的NameServer生效后即可使用。</p>
+        <p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/6q/wallhaven-6qy227.jpg" alt="People 2048x1350 women women with glasses sunglasses choker blonde neon face portrait"></p>
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（<a href="https://github.com/TinyJay/donate-page">打赏源码</a>），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。</p>
+<p>仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：</p>
+<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/23/mcU9yx5P2Ewnfq1.png" alt="image.png"></p>
+<p>虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天必须解决这个问题！</p>
+<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>由于显示异常是因为协议不一致导致的，所以要么取消博客的ssl证书，要么把iframe嵌入的链接也变成https的。</p>
+<p>第一个办法就是通过nginx配置ssl证书实现https，首先遇到的问题就是先要有SSL证书，证书可以通过阿里云的服务或者第三方服务购买，然后进行一系列后续的操作进行设置方可以实现。（具体发放自行百度，这里不在阐述）</p>
+<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>使用一个https服务器重定向http来代替直接使用不安全的URL设置其location属性，也可以实现正常的加载。</p>
+<p>如：<a href="https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/">https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/</a></p>
+<h1 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h1><p>如果你的网站同时准备了 https 资源和 http 资源，那么，可以使用相对协议可以帮助你实现当网站引入的都是 http 资源，网站域名更换为 https 后的无缝切换。<br>具体使用方法为：<code>iframe src=&quot;//106.12.185.172/donate&quot; &gt;&lt;/iframe&gt;</code>简而言之，就是将URL的协议（http、https）去掉，只保留//及后面的内容。这样，在使用https的网站中，浏览器会通过https请求URL，否则就通过http发送请求。</p>
 
       
     </div>
@@ -525,7 +507,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.guaini.blog/archives/4730.html" title="hexo博客优化之解决国外域名在国内访问慢的问题">https://www.guaini.blog/archives/4730.html</a>
+    <a href="https://www.guaini.blog/archives/6aa4b49.html" title="记一次https页面插入iframe遇到的问题">https://www.guaini.blog/archives/6aa4b49.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -540,9 +522,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/hexo/" rel="tag"># hexo</a>
+            <a href="/tags/https/" rel="tag"># https</a>
           
-            <a href="/tags/%E5%9F%9F%E5%90%8D/" rel="tag"># 域名</a>
+            <a href="/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/" rel="tag"># 疑难问题</a>
           
         </div>
       
@@ -555,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/57064.html" rel="next" title="解决json的value中含有双引号导致解析错误的问题">
-                <i class="fa fa-chevron-left"></i> 解决json的value中含有双引号导致解析错误的问题
+              <a href="/archives/106053ca.html" rel="next" title="hexo博客优化之文章链接持久化">
+                <i class="fa fa-chevron-left"></i> hexo博客优化之文章链接持久化
               </a>
             
           </div>
@@ -564,10 +546,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/archives/6849.html" rel="prev" title="hexo博客优化之Next主题加载优化性能提升">
-                hexo博客优化之Next主题加载优化性能提升 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -740,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#场景"><span class="nav-number">1.</span> <span class="nav-text">场景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#注册DNSPod账号"><span class="nav-number">2.</span> <span class="nav-text">注册DNSPod账号</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#修改Namesilo"><span class="nav-number">3.</span> <span class="nav-text">修改Namesilo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#域名解析"><span class="nav-number">4.</span> <span class="nav-text">域名解析</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法一"><span class="nav-number">2.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法二"><span class="nav-number">3.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法三"><span class="nav-number">4.</span> <span class="nav-text">方法三</span></a></li></ol></div>
             
 
           </div>
