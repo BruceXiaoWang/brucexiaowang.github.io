@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.guaini.blog/"/>
-  <updated>2020-01-26T03:31:13.614Z</updated>
+  <updated>2020-01-26T04:37:28.735Z</updated>
   <id>https://www.guaini.blog/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="https://www.guaini.blog/archives/6aa4b49.html"/>
     <id>https://www.guaini.blog/archives/6aa4b49.html</id>
     <published>2019-12-23T15:23:51.000Z</published>
-    <updated>2020-01-26T03:31:13.614Z</updated>
+    <updated>2020-01-26T04:37:28.735Z</updated>
     
-    <content type="html"><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/6q/wallhaven-6qy227.jpg" alt="People 2048x1350 women women with glasses sunglasses choker blonde neon face portrait"></p><a id="more"></a><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（<a href="https://github.com/TinyJay/donate-page">打赏源码</a>），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。</p><p>仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/23/mcU9yx5P2Ewnfq1.png" alt="image.png"></p><p>虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天必须解决这个问题！</p><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>由于显示异常是因为协议不一致导致的，所以要么取消博客的ssl证书，要么把iframe嵌入的链接也变成https的。</p><p>第一个办法就是通过nginx配置ssl证书实现https，首先遇到的问题就是先要有SSL证书，证书可以通过阿里云的服务或者第三方服务购买，然后进行一系列后续的操作进行设置方可以实现。（具体发放自行百度，这里不在阐述）</p><h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>使用一个https服务器重定向http来代替直接使用不安全的URL设置其location属性，也可以实现正常的加载。</p><p>如：<a href="https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/">https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/</a></p><h1 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h1><p>如果你的网站同时准备了 https 资源和 http 资源，那么，可以使用相对协议可以帮助你实现当网站引入的都是 http 资源，网站域名更换为 https 后的无缝切换。<br>具体使用方法为：<code>iframe src=&quot;//106.12.185.172/donate&quot; &gt;&lt;/iframe&gt;</code>简而言之，就是将URL的协议（http、https）去掉，只保留//及后面的内容。这样，在使用https的网站中，浏览器会通过https请求URL，否则就通过http发送请求。</p><h1 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h1><p>直接把赞赏的源码放到hexo博客的source目录下，然后iframe 设置为<code>iframe src=&quot;https://guaini.blog/donate&quot; &gt;&lt;/iframe&gt;</code>，并在站点的配置文件_config.yml中进行如下设置：<code>skip_render: donate/*</code>，即对donate文件夹下的全部文件不进行渲染。</p> <img src="/images/loading.gif" data-original="https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/ip?title=坑">]]></content>
+    <content type="html"><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/6q/wallhaven-6qy227.jpg" alt="People 2048x1350 women women with glasses sunglasses choker blonde neon face portrait"></p><a id="more"></a><h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（<a href="https://github.com/TinyJay/donate-page">打赏源码</a>），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。</p><p>仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：</p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/23/mcU9yx5P2Ewnfq1.png" alt="image.png"></p><p>虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天必须解决这个问题！</p><h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>由于显示异常是因为协议不一致导致的，所以要么取消博客的ssl证书，要么把iframe嵌入的链接也变成https的。</p><p>第一个办法就是通过nginx配置ssl证书实现https，首先遇到的问题就是先要有SSL证书，证书可以通过阿里云的服务或者第三方服务购买，然后进行一系列后续的操作进行设置方可以实现。（具体发放自行百度，这里不在阐述）</p><h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>使用一个https服务器重定向http来代替直接使用不安全的URL设置其location属性，也可以实现正常的加载。</p><p>如：<a href="https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/">https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/</a></p><h1 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h1><p>如果你的网站同时准备了 https 资源和 http 资源，那么，可以使用相对协议可以帮助你实现当网站引入的都是 http 资源，网站域名更换为 https 后的无缝切换。<br>具体使用方法为：<code>iframe src=&quot;//106.12.185.172/donate&quot; &gt;&lt;/iframe&gt;</code>简而言之，就是将URL的协议（http、https）去掉，只保留//及后面的内容。这样，在使用https的网站中，浏览器会通过https请求URL，否则就通过http发送请求。</p><h1 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h1><p>直接把赞赏的源码放到hexo博客的source目录下，然后iframe 设置为<code>iframe src=&quot;https://guaini.blog/donate&quot; &gt;&lt;/iframe&gt;</code>，并在站点的配置文件_config.yml中进行如下设置：<code>skip_render: donate/*</code>，即对donate文件夹下的全部文件不进行渲染。</p>]]></content>
     
     <summary type="html">
     
@@ -35,9 +35,9 @@
       <category term="坑" scheme="https://www.guaini.blog/categories/%E5%9D%91/"/>
     
     
-      <category term="https" scheme="https://www.guaini.blog/tags/https/"/>
-    
       <category term="疑难问题" scheme="https://www.guaini.blog/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/"/>
+    
+      <category term="https" scheme="https://www.guaini.blog/tags/https/"/>
     
   </entry>
   
@@ -372,9 +372,9 @@
       <category term="爬虫" scheme="https://www.guaini.blog/categories/%E7%88%AC%E8%99%AB/"/>
     
     
-      <category term="疑难问题" scheme="https://www.guaini.blog/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/"/>
-    
       <category term="json" scheme="https://www.guaini.blog/tags/json/"/>
+    
+      <category term="疑难问题" scheme="https://www.guaini.blog/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
