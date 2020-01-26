@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://www.guaini.blog/"/>
-  <updated>2020-01-26T06:10:30.064Z</updated>
+  <updated>2020-01-26T06:21:54.082Z</updated>
   <id>https://www.guaini.blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://www.guaini.blog/archives/6e00f407.html"/>
     <id>https://www.guaini.blog/archives/6e00f407.html</id>
     <published>2020-01-26T05:14:12.000Z</published>
-    <updated>2020-01-26T06:10:30.064Z</updated>
+    <updated>2020-01-26T06:21:54.082Z</updated>
     
     <content type="html"><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/2e/wallhaven-2e37y9.jpg" alt="General 3840x2152 digital digital art artwork fantasy art drawing digital painting futuristic futuristic city cyber cyber city cyberpunk architecture Fantasy Architecture building skyscraper tower spaceship clouds mist landscape sky skyscape neon neon lights lights city lights city cityscape women fantasy girl nature environment concept art"></p><p>场景：一直以来我都是用的PS4手柄使用有线的方式连接的PC，但是PS4手柄其实是一个无线手柄，直接蓝牙连接的话又不好使，那么有没有什么办法解决这个问题呢？答案是肯定的。</p><a id="more"></a><h1 id="名称解释"><a href="#名称解释" class="headerlink" title="名称解释"></a>名称解释</h1><p><strong>DS4——</strong>就是PS4手柄的专用学名。</p><p><strong>DS4 tool——</strong>专门将DS4模拟为XBOX手柄的软件，目前版本很多。</p><p><strong>DS4 windows——</strong>专门将DS4模拟为XBOX手柄的软件，目前版本很多。</p><p>可能有的童鞋会问了，为什么要模拟成XBOX手柄呢，毕竟XBOX和PC都挺”微软“的，所以也就不足为奇了。</p><h1 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h1><p><strong>DS4 tool</strong>：<a href="http://forums.pcsx2.net/attachment.php?aid=49259">http://forums.pcsx2.net/attachment.php?aid=49259</a></p><p><strong>DS4 windows 1.4.X版本</strong>：<a href="http://ds4windows.com/">http://ds4windows.com/</a></p><p><strong>DS4 windows 2.0.X版本</strong>：<a href="https://www.filehorse.com/download-ds4windows/">https://www.filehorse.com/download-ds4windows/</a></p><h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><p>打开软件后首先会安装驱动，安装完成后即可进行使用。</p><p>按住手柄的“PS键”和“share键”，5秒，直到LED，亮白灯，狂闪</p><p>在电脑上使用蓝牙配对好手柄，配对码0000，四个零，之后手柄就能正常工作了</p><p><strong>DS4 tool</strong></p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/01/26/bxpRm9VD4NKziPW.png" alt="image.png"></p><p><strong>DS4 windows</strong></p><p><img src="/images/loading.gif" data-original="https://i.loli.net/2020/01/26/fm5ZObUqzpAgc8i.png" alt="image.png"></p><h1 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h1><p><strong>DS4 tool</strong>和<strong>DS4 windows</strong>的区别就是虽然两款都能使用 ，但是后者的功能更多，可以调整手柄灯光和映射按键等丰富的功能</p><p><strong>DS4 windows 2.0.X</strong>其实是2019年12月25日才发布的新版本，和1.4.X版本的升级版。</p><p>但是不知道是什么原因我使用1.4.X版本的时候经常出现蓝牙已经连接，但是软件中识别不到设备的问题，使用2.0.X版本的就可以正常使用。</p>]]></content>
     
@@ -396,9 +396,9 @@
       <category term="爬虫" scheme="https://www.guaini.blog/categories/%E7%88%AC%E8%99%AB/"/>
     
     
-      <category term="疑难问题" scheme="https://www.guaini.blog/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/"/>
-    
       <category term="json" scheme="https://www.guaini.blog/tags/json/"/>
+    
+      <category term="疑难问题" scheme="https://www.guaini.blog/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/"/>
     
   </entry>
   
