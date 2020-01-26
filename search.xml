@@ -59,7 +59,7 @@
   </entry>
   <entry>
     <title>hexo博客优化之文章链接持久化</title>
-    <url>/archives/106053ca.html</url>
+    <url>/archives/106054ca.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/d5/wallhaven-d59263.jpg" alt="General 1920x1080 cyberpunk science fiction neon"></p>
 <p>场景：由于hexo 默认的链接是 <code>http://xxx.yy.com/2019/12/22/hello-world</code> 这种类型的，这源于站点目录下的配置 <code>_config.yml</code> 里的配置 <code>:permalink: :year/:month/:day/:title/</code>，这种默认配置的缺点就是一般文件名是中文，导致 url 链接里有中文出现，这会造成很多问题，如文末的版权声明会很臃肿不美观，也不利于 SEO。</p>
 <a id="more"></a>
@@ -93,7 +93,7 @@
   </entry>
   <entry>
     <title>PHP获取访客ip、地址、系统、浏览器等信息</title>
-    <url>/archives/18837.html</url>
+    <url>/archives/570b17ef.html</url>
     <content><![CDATA[<p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/j5/wallhaven-j5yloy.jpg" alt="General 2560x1440 digital digital art artwork Photoshop edit neon lights neon lights city cityscape building architecture people water reflection alone loneliness silhouette photography umbrella cold landscape mist winter Photorealism women outdoors street"></p>
 <a id="more"></a>
 
