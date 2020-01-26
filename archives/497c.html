@@ -75,7 +75,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="疑难问题,https," />
 
 
 
@@ -88,13 +88,17 @@
 
 
 
+<meta name="keywords" content="疑难问题,https">
 <meta property="og:type" content="article">
-<meta property="og:title" content="demo">
-<meta property="og:url" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;archives&#x2F;9363.html">
+<meta property="og:title" content="记一次https页面插入iframe遇到的问题">
+<meta property="og:url" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;archives&#x2F;497c.html">
 <meta property="og:site_name" content="怪你過分美麗">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-26T07:51:05.699Z">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
+<meta property="og:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
+<meta property="og:updated_time" content="2020-01-26T08:35:37.146Z">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https:&#x2F;&#x2F;www.guaini.blog&#x2F;images&#x2F;loading.gif">
 
 
 
@@ -124,7 +128,7 @@
 
 
 
-  <link rel="canonical" href="https://www.guaini.blog/archives/9363.html"/>
+  <link rel="canonical" href="https://www.guaini.blog/archives/497c.html"/>
 
 
 
@@ -140,7 +144,7 @@
 
 
 
-  <title>demo | 怪你過分美麗</title>
+  <title>记一次https页面插入iframe遇到的问题 | 怪你過分美麗</title>
   
 
 
@@ -323,7 +327,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://www.guaini.blog/archives/9363.html">
+    <link itemprop="mainEntityOfPage" href="https://www.guaini.blog/archives/497c.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="蝶衣">
@@ -340,7 +344,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">demo</h1>
+          <h1 class="post-title" itemprop="name headline">记一次https页面插入iframe遇到的问题</h1>
         
 
         <div class="post-meta">
@@ -352,8 +356,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-26T15:50:52+08:00">
-                2020-01-26
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-23T23:23:51+08:00">
+                2019-12-23
               </time>
             
 
@@ -363,6 +367,28 @@
           </span>
 
           
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%9D%91/" itemprop="url" rel="index">
+                    <span itemprop="name">坑</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -371,8 +397,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/archives/9363.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/archives/9363.html" itemprop="commentCount"></span>
+                <a href="/archives/497c.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/archives/497c.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -394,7 +420,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  0
+                  566
                 </span>
               
 
@@ -410,7 +436,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1
+                  2
                 </span>
               
             </div>
@@ -431,7 +457,20 @@
       
 
       
-        
+        <p><img src="/images/loading.gif" data-original="https://w.wallhaven.cc/full/6q/wallhaven-6qy227.jpg" alt="People 2048x1350 women women with glasses sunglasses choker blonde neon face portrait"></p>
+<a id="more"></a>
+
+<h1 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h1><p>这两天折腾博客，在文章尾部通过iframe嵌入实现打赏功能（<a href="https://github.com/TinyJay/donate-page">打赏源码</a>），在本地测试的时候的可以正常显示的，结果今天发现线上显示出了问题，iframe嵌入的部分显示一片空白。</p>
+<p>仔细研究发现，由于博客是https协议的，而iframe嵌入的链接是http协议的，所以浏览器就认为这个是不安全链接就给拦截了，如图所示：</p>
+<p><img src="/images/loading.gif" data-original="https://i.loli.net/2019/12/23/mcU9yx5P2Ewnfq1.png" alt="image.png"></p>
+<p>虽然说点击加载不安全的脚本即可正常显示，但是这样却大大降低了用户体验，所以今天必须解决这个问题！</p>
+<h1 id="方法一"><a href="#方法一" class="headerlink" title="方法一"></a>方法一</h1><p>由于显示异常是因为协议不一致导致的，所以要么取消博客的ssl证书，要么把iframe嵌入的链接也变成https的。</p>
+<p>第一个办法就是通过nginx配置ssl证书实现https，首先遇到的问题就是先要有SSL证书，证书可以通过阿里云的服务或者第三方服务购买，然后进行一系列后续的操作进行设置方可以实现。（具体发放自行百度，这里不在阐述）</p>
+<h1 id="方法二"><a href="#方法二" class="headerlink" title="方法二"></a>方法二</h1><p>使用一个https服务器重定向http来代替直接使用不安全的URL设置其location属性，也可以实现正常的加载。</p>
+<p>如：<a href="https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/">https://www.cracking.com.ar/redir/redir.php?URL=http://106.12.185.172/donate/</a></p>
+<h1 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h1><p>如果你的网站同时准备了 https 资源和 http 资源，那么，可以使用相对协议可以帮助你实现当网站引入的都是 http 资源，网站域名更换为 https 后的无缝切换。<br>具体使用方法为：<code>iframe src=&quot;//106.12.185.172/donate&quot; &gt;&lt;/iframe&gt;</code>简而言之，就是将URL的协议（http、https）去掉，只保留//及后面的内容。这样，在使用https的网站中，浏览器会通过https请求URL，否则就通过http发送请求。</p>
+<h1 id="方法四"><a href="#方法四" class="headerlink" title="方法四"></a>方法四</h1><p>直接把赞赏的源码放到hexo博客的source目录下，然后iframe 设置为<code>iframe src=&quot;https://guaini.blog/donate&quot; &gt;&lt;/iframe&gt;</code>，并在站点的配置文件_config.yml中进行如下设置：<code>skip_render: donate/*</code>，即对donate文件夹下的全部文件不进行渲染。</p>
+
       
     </div>
     
@@ -458,7 +497,7 @@
 
     <div>
       
-        <img src="/images/loading.gif" data-original="http://106.12.185.172/ip?title=demo">
+        <img src="/images/loading.gif" data-original="http://106.12.185.172/ip?title=记一次https页面插入iframe遇到的问题">
       
     </div>
    
@@ -477,7 +516,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="https://www.guaini.blog/archives/9363.html" title="demo">https://www.guaini.blog/archives/9363.html</a>
+    <a href="https://www.guaini.blog/archives/497c.html" title="记一次https页面插入iframe遇到的问题">https://www.guaini.blog/archives/497c.html</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -490,6 +529,14 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/%E7%96%91%E9%9A%BE%E9%97%AE%E9%A2%98/" rel="tag"># 疑难问题</a>
+          
+            <a href="/tags/https/" rel="tag"># https</a>
+          
+        </div>
+      
 
       
       
@@ -499,8 +546,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/archives/6e00f407.html" rel="next" title="DS4与DS4Windows">
-                <i class="fa fa-chevron-left"></i> DS4与DS4Windows
+              <a href="/archives/106053ca.html" rel="next" title="hexo博客优化之文章链接持久化">
+                <i class="fa fa-chevron-left"></i> hexo博客优化之文章链接持久化
               </a>
             
           </div>
@@ -508,6 +555,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/archives/6e00f407.html" rel="prev" title="DS4与DS4Windows">
+                DS4与DS4Windows <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -562,8 +613,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -582,7 +642,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-count">23</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -661,6 +721,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#问题"><span class="nav-number">1.</span> <span class="nav-text">问题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法一"><span class="nav-number">2.</span> <span class="nav-text">方法一</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法二"><span class="nav-number">3.</span> <span class="nav-text">方法二</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法三"><span class="nav-number">4.</span> <span class="nav-text">方法三</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#方法四"><span class="nav-number">5.</span> <span class="nav-text">方法四</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
 
